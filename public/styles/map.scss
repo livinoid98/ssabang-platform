@@ -1,0 +1,84 @@
+@import "./function.scss";
+
+.map-title{
+    @include setSize(1200px, 64px);
+    margin:0 auto;
+    @include flex(flex, null, center);
+    border-bottom:1px solid #E7E7E7;
+    form{
+        width:400px;
+        @include flex(flex);
+        input[type='text']{
+            @include setSize(180px, 36px);
+            border:2px solid #F5F5F5;
+            border-radius:5px;
+        }
+        input[type='submit']{
+            @include setSize(80px, 40px);
+            border:none;
+            border-radius:5px;
+            background-color:#F5F5F5;
+            margin-left:8px;
+            cursor:pointer;
+        }
+    }
+    .separator{
+        @include flex(flex, flex-start);
+        select{
+            @include setSize(100px, 40px);
+            background-color:#f5f5f5;
+            border:none;
+            border-radius:4px;
+            margin-left:16px;
+            box-sizing: border-box;
+            padding:10px;
+            &:focus{
+                background-color:#326CF9;
+                @include font(14px, 400, #fff);
+            }
+            option{
+                background-color:#f5f5f5;
+                @include font(14px, 400, #737373);
+            }
+        }
+        .find-contents{
+            @include setSize(80px, 40px);
+            border:none;
+            border-radius:4px;
+            @include font(13px, 500, #000);
+            margin-left:12px;
+            cursor:pointer;
+            &:hover{
+                background-color:#326CF9;
+                @include font(14px, 400, #fff);
+            }
+        }
+    }
+}
+
+.main{
+    @include block-center(1200px);
+    @include flex(flex);
+    .map-left{
+        @include setSize(600px, 100%);
+        .main-left-info{
+            @include setSize(100%, 186px);
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left:24px;
+            cursor:pointer;
+            p{
+                @include font(14px, 400, #8D8E8D);
+                margin-top: 12px;
+                &:nth-child(1){
+                    @include font(18px, 600, #000);
+                }
+            }
+        }
+    }
+
+    .main-right{
+        @include setSize(100%, 700px);
+    }
+}

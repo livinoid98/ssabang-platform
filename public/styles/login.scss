@@ -1,0 +1,102 @@
+@import "./function.scss";
+
+.login_wrap{
+  width:1200px;
+  margin:0 auto;
+  margin-top:120px;
+  margin-bottom: 150px;
+  .login_title{
+      width:100%;
+      margin-top:58px;
+      text-align:center;
+      h3{
+          font-size:26px;
+          font-weight:700;
+          color:#353535;
+      }
+      p{
+          margin-top:4px;
+          font-size:12px;
+          font-weight:300;
+          color:#b5b5b5;
+      }
+  }
+  .login_content{
+      display:flex;
+      justify-content:center;
+      margin-top:36px;
+      .login{
+          width:300px;
+          form{
+              h4{
+                  font-size:16px;
+                  font-weight:700;
+                  color:#535353;
+              }
+              input{
+                  width:250px;
+                  height:40px;
+                  margin-top:12px;
+                  border:1px solid #c4c4c4;
+                  box-sizing: border-box;
+                  padding:10px;
+                  &:nth-child(4){
+                      width:257px;
+                      background-color:#999999;
+                      font-size:15px;
+                      font-weight:700;
+                      color:#fff;
+                      cursor:pointer;
+                  }
+              }
+          }
+          ul{
+              margin-top:10px;
+              li{
+                  float:left;
+                  margin-left:6px;
+                  font-size:12px;
+                  font-weight:400;
+                  color:#999;
+                  cursor:pointer;
+                  &::after{
+                      content:"   /";
+                  }
+                  &:last-child::after{
+                      content:"";
+                  }
+                  &:nth-child(1){
+                      margin-left:0px;
+                  }
+              }
+          }
+      }
+      .sign_up_inlogin{
+          width:300px;
+          h4{
+              font-size:16px;
+              font-weight:700;
+              color:#535353;
+              margin-top:4px;
+          }
+          p{
+              margin-top:10px;
+              font-size:12px;
+              font-weight:300;
+              line-height:16px;
+              color:#4f4f4f;
+          }
+          button{
+              width:257px;
+              height:40px;
+              margin-top:70px;
+              border:1px solid #c4c4c4;
+              background-color:#999999;
+              font-size:15px;
+              font-weight:700;
+              color:#fff;
+              cursor:pointer;
+          }
+      }
+  }
+}

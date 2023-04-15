@@ -1,0 +1,96 @@
+@import "./function.scss";
+
+.main-banner{
+    @include setSize(100%, 300px);
+    background-image: url("../img/main-banner.png");
+    background-position: center;
+    background-size: cover;
+    position:relative;
+    .opacity-layer{
+        @include setSize(100%, 300px);
+        background-color: rgba(0,0,0,0.2);
+        top:0px;
+        left:0px;
+    }
+    .main-title{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        h3{
+            @include font(42px, 700, #fff);
+        }
+        p{
+            @include font(14px, 400, #fff);
+            margin-top:9px;
+        }
+    }
+}
+
+.select-wrap{
+    @include block-center(1200px);
+    @include flex(flex);
+    padding-top:48px;
+    select{
+        @include setSize(130px, 40px);
+        border-radius: 5px;
+        background-color: transparent;
+        border:1px solid #ccc;
+        @include font(14px, 400, #929292);
+        box-sizing: border-box;
+        padding:10px;
+        margin-left:14px;
+        &:first-child{
+            margin-left:0px;
+        }
+    }
+}
+
+.recommend-house{
+    @include block-center(1200px);
+    padding-top:80px;
+    padding-bottom:86px;
+    h3{
+        @include font(18px, 700, #323232);
+    }
+    ul{
+        margin-top:20px;
+        @include flex(flex, center);
+        flex-wrap: wrap;
+        li{
+            @include setSize(380px, 400px);
+            margin-left:30px;
+            margin-bottom:54px;
+            &:nth-child(3n+1){
+                margin-left:0px;
+            }
+            .recommend-img-wrap{
+                width:100%;
+                img{
+                    width:100%;
+                }
+            }
+            .recommend-text-wrap{
+                h4{
+                    padding-top:36px;
+                    @include font(17px, 700, #323232);
+                }
+                p{
+                    @include font(13px, 400, #828282);
+                    margin-top:16px;
+                }
+                table{
+                    margin-top:10px;
+                    tr{
+                        td{
+                            @include font(12px, 400, #828282);
+                            padding:4px;
+                            padding-left:0px;
+                            padding-right:8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

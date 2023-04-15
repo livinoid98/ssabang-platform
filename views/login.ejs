@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>싸방 - 놀러와요, 싸피의 방</title>
+		<link rel="stylesheet" href="/styles/reset.css" type="text/css" />
+		<link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+		<link rel="stylesheet" href="/styles/login.css" type="text/css" />
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+				<h1>
+					<a href="/">
+						<svg
+							width="645"
+							height="282"
+							viewBox="0 0 645 282"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
+						>
+							<rect
+								width="645"
+								height="282"
+								fill="url(#pattern0)"
+							/>
+							<defs>
+								<pattern
+									id="pattern0"
+									patternContentUnits="objectBoundingBox"
+									width="1"
+									height="1"
+								>
+									<use
+										xlink:href="#image0_139_4"
+										transform="scale(0.00128214 0.00293255)"
+									/>
+								</pattern>
+								<image
+									id="image0_139_4"
+									width="780"
+									height="341"
+									xlink:href="data:image/png;base64,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"
+								/>
+							</defs>
+						</svg>
+					</a>
+				</h1>
+			</div>
+			<nav>
+				<ul class="nav-left">
+					<li>
+						<h2><a href="/map">매물보기</a></h2>
+					</li>
+					<li>
+						<h2><a href="/list">매물정보</a></h2>
+					</li>
+					<li>
+						<h2><a href="/news">부동산이슈</a></h2>
+					</li>
+					<li>
+						<h2><a href="/notice">공지사항</a></h2>
+					</li>
+				</ul>
+				<ul class="nav-right">
+					<li class="login">
+						<h2><a href="/login">로그인</a></h2>
+					</li>
+					<li style="display: none" class="logout">
+						<h2><a href="#">로그아웃</a></h2>
+					</li>
+					<li class="signup">
+						<h2><a href="/signup">회원가입</a></h2>
+					</li>
+					<li style="display: none" class="mypage">
+						<h2><a href="./mypage">회원정보</a></h2>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div class="login_wrap clearfix">
+			<div class="login_title">
+				<h3>WELCOME TO SSABANG</h3>
+				<p>전·월세 부동산 직거래 플랫폼 싸방에 오신 걸 환영합니다.</p>
+			</div>
+			<div class="login_content">
+				<div class="login">
+					<form>
+						<h4>로그인</h4>
+						<input type="text" name="id" placeholder="ID" required />
+						<input type="password" name="password" placeholder="PW" />
+						<input type="submit" value="LOGIN" />
+					</form>
+					<ul class="clearfix">
+						<li>아이디 찾기</li>
+						<li>비밀번호 찾기</li>
+					</ul>
+				</div>
+				<div class="sign_up_inlogin">
+					<h4>회원가입</h4>
+					<p>싸방 회원에게만 제공되는 다양한 혜택을 누려보세요.</p>
+					<Link href="/signup"><a><button>JOIN US</button></a></Link>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="footer-wrap">
+				<ul>
+					<li>
+						<h2><a href="#">회사소개</a></h2>
+					</li>
+					<li>
+						<h2><a href="#">개인정보처리방침</a></h2>
+					</li>
+					<li>
+						<h2><a href="#">이용약관</a></h2>
+					</li>
+					<li>
+						<h2><a href="#">공지사항</a></h2>
+					</li>
+					<li>
+						<h2><a href="#">고객센터</a></h2>
+					</li>
+				</ul>
+				<div class="call">
+					<div class="call-icon-wrap">
+						<img src="/img/call-icon.png" alt="" />
+					</div>
+					<span class="phone-num">3429-5100</span>
+					<p>
+						월-금: 09:00 - 18:00 (주말/공휴일 제외) | 팩스:
+						02-3429-5100 | 고객문의 : ssafy@ssafy.com | 제휴문의 :
+						ssafy@ssafy.com
+					</p>
+				</div>
+				<p class="address-text">
+					삼성전자 사회공헌 | 주소: 서울특별시 강남구 테헤란로 212
+					(역삼동 718-5번지) 멀티캠퍼스 역삼
+				</p>
+				<div class="copyright-text">
+					<p>
+						자사는 통신판매중개자로서 건축 공사의 주 거래 당사자가
+						아니며, 시공전문가가 제공한 견적 및 공사 시공 서비스에
+						대해 일체 책임을 지지 않습니다.
+					</p>
+				</div>
+				<div class="copyright-logo">
+					<p>Copyright ⓒ SSAFY</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

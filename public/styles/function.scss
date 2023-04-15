@@ -1,0 +1,27 @@
+@mixin setSize($width:null, $height: null){
+    width: $width;
+    height: $height;
+}
+
+@mixin block-center($width: null){
+    width: $width;
+    margin:0 auto;
+}
+
+@mixin position-center{
+    position:relative;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+@mixin font($size:null, $weight:null, $color: null){
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin flex($display:null, $content:null, $align:null){
+    display: $display;
+    justify-content: $content;
+    align-items: $align;
+}

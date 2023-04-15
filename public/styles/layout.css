@@ -1,0 +1,86 @@
+header {
+  width: 1200px;
+  height: 92px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #E7E7E7;
+}
+header .logo {
+  width: 120px;
+}
+header .logo svg {
+  width: 100%;
+}
+header nav {
+  width: 100%;
+  height: 92px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 22px;
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+}
+header nav ul li {
+  margin-left: 28px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #838383;
+}
+header nav .nav-right {
+  margin-right: 28px;
+}
+
+footer {
+  width: 100%;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  border-top: 2px solid #DDDDDD;
+}
+footer .footer-wrap {
+  width: 1200px;
+  margin: 0 auto;
+  font-size: 12px;
+  font-weight: 400;
+  color: #999C9F;
+}
+footer .footer-wrap ul {
+  display: flex;
+  align-items: center;
+}
+footer .footer-wrap ul li {
+  font-size: 14px;
+  font-weight: 400;
+  color: #585A58;
+  margin-left: 32px;
+}
+footer .footer-wrap ul li:first-child {
+  margin-left: 0px;
+}
+footer .footer-wrap .call {
+  display: flex;
+  align-items: center;
+  margin-top: 36px;
+}
+footer .footer-wrap .call .phone-num {
+  font-size: 24px;
+  font-weight: 600;
+  color: #999999;
+  margin-left: 12px;
+}
+footer .footer-wrap .call p {
+  margin-left: 14px;
+}
+footer .footer-wrap .address-text {
+  margin-top: 6px;
+}
+footer .footer-wrap .copyright-text {
+  margin-top: 32px;
+}
+footer .footer-wrap .copyright-logo {
+  margin-top: 16px;
+}/*# sourceMappingURL=layout.css.map */

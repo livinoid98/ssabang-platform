@@ -1,0 +1,175 @@
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signup {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-signup .form-signup-heading {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.form-signup input {
+  border: none;
+  border-bottom: 1px solid gray;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-signup input[type=email] {
+  margin-bottom: 20px;
+}
+
+.form-signup button {
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 20px 10px;
+  background-color: #129ded;
+  color: white;
+}
+
+.login_title {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+  text-align: center;
+}
+.login_title h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #353535;
+}
+.login_title p {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #b5b5b5;
+}
+
+.login_title {
+  margin-top: 60px;
+}
+
+.sign_up {
+  width: 900px;
+  margin: 0 auto;
+  margin-bottom: 110px;
+}
+.sign_up .sign_up_title {
+  margin-top: 20px;
+}
+.sign_up .sign_up_title h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #535353;
+  display: inline-block;
+}
+.sign_up .sign_up_title p {
+  font-size: 12px;
+  font-weight: 300;
+  color: #898989;
+  display: inline-block;
+  margin-left: 8px;
+}
+.sign_up .sign_up_content {
+  width: 900px;
+}
+.sign_up .sign_up_content form table {
+  width: 900px;
+  margin-top: 16px;
+}
+.sign_up .sign_up_content form table tr {
+  border-top: 1px solid #e8e8e8;
+}
+.sign_up .sign_up_content form table tr:first-child {
+  border-top: 2px solid #e8e8e8;
+}
+.sign_up .sign_up_content form table tr:nth-child(3) span {
+  font-size: 12px;
+  font-weight: 300;
+  color: #ff0000;
+  margin-left: 12px;
+}
+.sign_up .sign_up_content form table tr td {
+  padding: 12px;
+}
+.sign_up .sign_up_content form table tr td:nth-child(1) {
+  width: 152px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+.sign_up .sign_up_content form table tr td input {
+  width: 260px;
+  height: 20px;
+  border: 1px solid #d9d9d9;
+}
+.sign_up .sign_up_content form h4 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #3c3c3c;
+  margin-top: 32px;
+}
+.sign_up .sign_up_content form textarea {
+  width: 900px;
+  height: 160px;
+  margin-top: 8px;
+  border: 1px solid #747474;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #747474;
+  line-height: 20px;
+}
+.sign_up .sign_up_content form .check {
+  margin-top: 10px;
+  text-align: right;
+}
+.sign_up .sign_up_content form .check span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #202020;
+}
+.sign_up .sign_up_content form .check input {
+  cursor: pointer;
+}
+.sign_up .sign_up_content form .submit {
+  width: 900px;
+  margin-top: 26px;
+  margin-bottom: 36px;
+  text-align: center;
+}
+.sign_up .sign_up_content form .submit button {
+  width: 145px;
+  height: 35px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  background-color: #bfbfbf;
+}
+.sign_up .sign_up_content form .submit input {
+  width: 145px;
+  height: 35px;
+  margin-left: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  border: none;
+  background-color: #3c3c3c;
+  cursor: pointer;
+}/*# sourceMappingURL=signup.css.map */
