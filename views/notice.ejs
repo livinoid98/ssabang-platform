@@ -66,18 +66,21 @@
 					</li>
 				</ul>
 				<ul class="nav-right">
-					<li class="login">
-						<h2><a href="/login">로그인</a></h2>
-					</li>
-					<li style="display: none" class="logout">
-						<h2><a href="#">로그아웃</a></h2>
-					</li>
-					<li class="signup">
-						<h2><a href="/signup">회원가입</a></h2>
-					</li>
-					<li style="display: none" class="mypage">
-						<h2><a href="/mypage">회원정보</a></h2>
-					</li>
+					<% if(user_name == null) { %>
+						<li class="login">
+							<h2><a href="/login">로그인</a></h2>
+						</li>
+						<li class="signup">
+							<h2><a href="/signup">회원가입</a></h2>
+						</li>
+						<% }else{ %>
+						<li>
+							<h2><a href="#"><%= user_name %>님 안녕하세요</a></h2>
+						</li>
+						<li class="logout">
+							<h2><a href="/logout">로그아웃</a></h2>
+						</li>
+					<% } %>
 				</ul>
 			</nav>
 		</header>
@@ -119,94 +122,16 @@
 					</tr>
 				</thead>
 				<tbody>
-					<a href="#">
-						<tr>
-							<td>1</td>
-							<td>[뉴스] 이방 서비스 정상화 안내</td>
-							<td>이싸피</td>
-							<td>103</td>
-						</tr>
-					</a>
-					<a href="#">
-						<tr>
-							<td>10</td>
-							<td>[공지] 김방 서비스 정상화 안내</td>
-							<td>김싸피</td>
-							<td>26</td>
-						</tr>
-					</a>
-					<a href="#">
-						<tr>
-							<td>9</td>
-							<td>[공지] 박방 서비스 정상화 안내</td>
-							<td>박싸피</td>
-							<td>19</td>
-						</tr>
-					</a>
-					<a href="#">
-						<tr>
-							<td>8</td>
-							<td>[공지] 황방 서비스 정상화 안내</td>
-							<td>황싸피</td>
-							<td>79</td>
-						</tr>
-					</a>
-					<a href="#">
-						<tr>
-							<td>7</td>
-							<td>[공지] 구방 서비스 정상화 안내</td>
-							<td>구싸피</td>
-							<td>215</td>
-						</tr>
-					</a>
-					<a href="#">
-						<tr>
-							<td>6</td>
-							<td>[공지] 전방 서비스 정상화 안내</td>
-							<td>전싸피</td>
-							<td>423</td>
-						</tr>
-					</a>
-					<a href="#">
-						<tr>
-							<td>5</td>
-							<td>[공지] 최방 서비스 정상화 안내</td>
-							<td>최싸피</td>
-							<td>264</td>
-						</tr>
-					</a>
-					<a href="#">
-						<tr>
-							<td>4</td>
-							<td>[공지] 조방 서비스 정상화 안내</td>
-							<td>조싸피</td>
-							<td>43</td>
-						</tr>
-					</a>
-					<a href="#">
-						<tr>
-							<td>3</td>
-							<td>[공지] 왕방 서비스 정상화 안내</td>
-							<td>왕싸피</td>
-							<td>56</td>
-						</tr>
-					</a>
-					<a href="#">
-						<tr>
-							<td>2</td>
-							<td>[공지] 임방 서비스 정상화 안내</td>
-							<td>임싸피</td>
-							<td>78</td>
-						</tr>
-					</a>
-					<a href="#">
-						<tr>
-							<td>1</td>
-							<td>[공지] 이방 서비스 정상화 안내</td>
-							<td>이싸피</td>
-							<td>103</td>
-						</tr>
-					</a>
+					<% for(let i=0; i<list.length; i++){ %>
+					
+					<tr>
+						<td><a href="/detail/<%= list[i].board_no %>"><%= list[i].board_no %></a></td>
+						<td><a href="/detail/<%= list[i].board_no %>"><%= list[i].title %></a></td>
+						<td><a href="/detail/<%= list[i].board_no %>">관리자</a></td>
+						<td><a href="/detail/<%= list[i].board_no %>"><%= list[i].hitCnt %></a></td>
+					</tr>
+					
+					<% } %>
 				</tbody>
 			</table>
 			<div class="button-wrap">

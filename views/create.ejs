@@ -70,18 +70,21 @@
 					</li>
 				</ul>
 				<ul class="nav-right">
-					<li class="login">
-						<h2><a href="/login">로그인</a></h2>
-					</li>
-					<li style="display: none" class="logout">
-						<h2><a href="#">로그아웃</a></h2>
-					</li>
-					<li class="signup">
-						<h2><a href="/signup">회원가입</a></h2>
-					</li>
-					<li style="display: none" class="mypage">
-						<h2><a href="/mypage">회원정보</a></h2>
-					</li>
+					<% if(user_name == null) { %>
+						<li class="login">
+							<h2><a href="/login">로그인</a></h2>
+						</li>
+						<li class="signup">
+							<h2><a href="/signup">회원가입</a></h2>
+						</li>
+						<% }else{ %>
+						<li>
+							<h2><a href="#"><%= user_name %>님 안녕하세요</a></h2>
+						</li>
+						<li class="logout">
+							<h2><a href="/logout">로그아웃</a></h2>
+						</li>
+					<% } %>
 				</ul>
 			</nav>
 		</header>
@@ -97,16 +100,27 @@
 		</div>
 		<div class="article-contents">
 			<h3>공지사항</h3>
-			<form method="post">
-				<input type="hidden" name="action" value="create"/>
-                <input type="text" name="name" placeholder="작성자"/>
-                <input type="text" name="title" placeholder="제목"/>
-                <input type="text" name="contents" placeholder="내용"/>
-                <div class="button-wrap">
-                    <button>작성하기</button>
-                    <button><a href="/notice">목록보기</a></button>
-                </div>
-            </form>
+			<p>부동산 문서, 주소 입력 한 번이면 OK!</p>
+			<div class="flex-wrap">
+				<div class="article-left">
+					<div class="create-img-wrap">
+						<img src="/img/create_img.jpg" alt=""/>
+						
+					</div>
+				</div>
+				<div class="article-right">
+					<form action="/create" method="post">
+						<input type="text" name="name" placeholder="작성자"/>
+						<input type="text" name="title" placeholder="제목"/>
+						<input type="text" name="content" placeholder="내용"/>
+						<div class="button-wrap">
+							<button>작성하기</button>
+							<button><a href="/notice">목록보기</a></button>
+						</div>
+					</form>
+				</div>
+			</div>
+			
 		</div>
 		<footer>
 			<div class="footer-wrap">

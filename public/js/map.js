@@ -145,10 +145,10 @@ const updateAPT = async () => {
 	const regcode = gugunSelect.value.substr(0, 5);
 	const date = `${yearSelect.value}${monthSelect.value}`;
 
-	if (yearSelect.value == "" || monthSelect.value == "") {
-		alert("년도를 선택해주세요.");
-		return;
-	}
+	// if (yearSelect.value == "" || monthSelect.value == "") {
+	// 	alert("년도를 선택해주세요.");
+	// 	return;
+	// }
 
 	const { apts, totalCount } = await fetchAPTInfo(regcode, date, 1);
 	totalPageNo = totalCount;

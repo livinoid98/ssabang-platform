@@ -5,9 +5,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>싸방 - 놀러와요, 싸피의 방</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>싸방 - 놀러와요, 싸피의 방</title>
 		<link rel="stylesheet" href="/styles/reset.css" type="text/css" />
 		<link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-		<link rel="stylesheet" href="/styles/main.css" type="text/css" />
+		<link rel="stylesheet" href="/styles/detail.css" type="text/css" />
 	</head>
 	<body>
 		<header>
@@ -67,172 +71,43 @@
 				</ul>
 				<ul class="nav-right">
 					<% if(user_name == null) { %>
-					<li class="login">
-						<h2><a href="/login">로그인</a></h2>
-					</li>
-					<li class="signup">
-						<h2><a href="/signup">회원가입</a></h2>
-					</li>
-					<% }else{ %>
-					<li>
-						<h2><a href="#"><%= user_name %>님 안녕하세요</a></h2>
-					</li>
-					<li class="logout">
-						<h2><a href="/logout">로그아웃</a></h2>
-					</li>
+						<li class="login">
+							<h2><a href="/login">로그인</a></h2>
+						</li>
+						<li class="signup">
+							<h2><a href="/signup">회원가입</a></h2>
+						</li>
+						<% }else{ %>
+						<li>
+							<h2><a href="#"><%= user_name %>님 안녕하세요</a></h2>
+						</li>
+						<li class="logout">
+							<h2><a href="/logout">로그아웃</a></h2>
+						</li>
 					<% } %>
 				</ul>
 			</nav>
 		</header>
-		<div class="main-search-banner">
+		<div class="main-banner">
 			<div class="opacity-layer"></div>
-			<div class="position-wrap">
-				<div class="main-search-title">
-					<p>나에게 필요한</p>
-					<p>부동산 정보를 검색해보세요.</p>
-				</div>
-				<div class="main-search-form">
-					<form action="#">
-						<input
-							type="text"
-							placeholder="검색어를 입력해보세요."
-							class="search"
-						/>
-						<input type="submit" value="검색" />
-					</form>
-				</div>
-				<div class="keyword-wrap">
-					<span>인기검색어</span>
-					<p>#공시가격</p>
-					<p>#공공분야</p>
-					<p>#3기신도시</p>
-				</div>
+			<div class="main-title">
+				<h3>공지사항</h3>
+				<p>나에게 필요한 부동산 정보</p>
 			</div>
 		</div>
-		<div class="recommend-house">
-			<h3>Today's 인기하우스</h3>
-			<ul>
-				<li>
-					<a href="#">
-						<div class="recommend-img-wrap">
-							<img src="/img/room1.png" alt="" />
-						</div>
-						<div class="recommend-text-wrap">
-							<h4>이천시 동양아파트 (37평)</h4>
-							<p>경기 이천시 송정동</p>
-							<table>
-								<tr>
-									<td>매매</td>
-									<td>3,720만원</td>
-								</tr>
-								<tr>
-									<td>월세</td>
-									<td>50만원 ~ 60만원</td>
-								</tr>
-							</table>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="recommend-img-wrap">
-							<img src="/img/room2.png" alt="" />
-						</div>
-						<div class="recommend-text-wrap">
-							<h4>이천시 동양아파트 (37평)</h4>
-							<p>경기 이천시 송정동</p>
-							<table>
-								<tr>
-									<td>매매</td>
-									<td>3,720만원</td>
-								</tr>
-								<tr>
-									<td>월세</td>
-									<td>50만원 ~ 60만원</td>
-								</tr>
-							</table>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="recommend-img-wrap">
-							<img src="/img/room3.png" alt="" />
-						</div>
-						<div class="recommend-text-wrap">
-							<h4>이천시 동양아파트 (37평)</h4>
-							<p>경기 이천시 송정동</p>
-							<table>
-								<tr>
-									<td>매매</td>
-									<td>3,720만원</td>
-								</tr>
-								<tr>
-									<td>월세</td>
-									<td>50만원 ~ 60만원</td>
-								</tr>
-							</table>
-						</div>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="info-wrap">
-			<div class="info-title">
-				<h3>Hot &amp; New</h3>
-				<p>부동산 시장의 유용한 정보를 한곳에서!</p>
-			</div>
-			<div class="info-contents">
-				<a href="#">
-					<div class="real-price-wrap">
-						<h4>실거래가<br />알아보기</h4>
-					</div>
-				</a>
-				<a href="#">
-					<div class="news-wrap">
-						<div class="news-img-wrap">
-							<img src="/img/news-thumbnail.jpg" alt="" />
-						</div>
-						<div class="news-text-wrap">
-							<span>리포트&amp;뉴스</span>
-							<p>아파트값 하락폭 축소와 확대 반복</p>
-						</div>
-					</div>
-				</a>
-				<a href="">
-					<div class="article-wrap">
-						<h3>공지/뉴스</h3>
-						<div class="separate-line"></div>
-						<table>
-							<tr>
-								<td>
-									실거래 데이터 02월 28일자 기준 업데이트 안내
-								</td>
-								<td>2023.03.03</td>
-							</tr>
-							<tr>
-								<td>
-									실거래 데이터 02월 28일자 기준 업데이트 안내
-								</td>
-								<td>2023.03.03</td>
-							</tr>
-							<tr>
-								<td>
-									실거래 데이터 02월 28일자 기준 업데이트 안내
-								</td>
-								<td>2023.03.03</td>
-							</tr>
-							<tr>
-								<td>
-									실거래 데이터 02월 28일자 기준 업데이트 안내
-								</td>
-								<td>2023.03.03</td>
-							</tr>
-						</table>
-					</div>
-				</a>
-			</div>
-		</div>
+		<div class="notice">
+            <div class=notice_title>
+                <button><a href="/notice">목록</a></button>
+            </div>
+            <div class="notice_body">
+                <span>공지사항</span>
+                <h3><%= list.title %></h3>
+                <span><%= date %></span>
+                <p><%= list.content %></p>
+                <button><a href="#">수정</a></button>
+                <button><a href="/delete/<%= list.board_no %>">삭제</a></button>
+            </div>
+        </div>
 		<footer>
 			<div class="footer-wrap">
 				<ul>
@@ -279,10 +154,5 @@
 				</div>
 			</div>
 		</footer>
-		<script
-			src="./js/storage.js"
-			type="text/javascript"
-			text="javascript"
-		></script>
 	</body>
 </html>

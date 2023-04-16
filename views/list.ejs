@@ -66,18 +66,21 @@
 					</li>
 				</ul>
 				<ul class="nav-right">
-					<li class="login">
-						<h2><a href="/login">로그인</a></h2>
-					</li>
-					<li style="display: none" class="logout">
-						<h2><a href="#">로그아웃</a></h2>
-					</li>
-					<li class="signup">
-						<h2><a href="/signup">회원가입</a></h2>
-					</li>
-					<li style="display: none" class="mypage">
-						<h2><a href="./mypage">회원정보</a></h2>
-					</li>
+					<% if(user_name == null) { %>
+						<li class="login">
+							<h2><a href="/login">로그인</a></h2>
+						</li>
+						<li class="signup">
+							<h2><a href="/signup">회원가입</a></h2>
+						</li>
+						<% }else{ %>
+						<li>
+							<h2><a href="#"><%= user_name %>님 안녕하세요</a></h2>
+						</li>
+						<li class="logout">
+							<h2><a href="/logout">로그아웃</a></h2>
+						</li>
+					<% } %>
 				</ul>
 			</nav>
 		</header>

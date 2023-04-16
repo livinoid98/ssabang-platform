@@ -1,5 +1,35 @@
 @import "./function.scss";
 
+.main-banner{
+    @include setSize(100%, 300px);
+    background-image: url("../img/main-banner.png");
+    background-position: center;
+    background-size: cover;
+    position:relative;
+    .opacity-layer{
+        @include setSize(100%, 300px);
+        background-color: rgba(0,0,0,0.2);
+        top:0px;
+        left:0px;
+    }
+    .main-title{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        h3{
+            @include font(42px, 700, #fff);
+            align-items: center;
+            text-align: center;
+        }
+        p{
+            @include font(14px, 400, #fff);
+            margin-top:9px;
+            align-items: center;
+        }
+    }
+}
+
 .login_wrap{
   width:1200px;
   margin:0 auto;
