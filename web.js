@@ -2,6 +2,8 @@ const express = require("express");
 const ejs = require("ejs");
 const app = express();
 const session = require("express-session");
+const axios = require("axios");
+const cheerio = require("cheerio");
 const db_config = require(__dirname + "/config/database.js");
 const conn = db_config.init();
 const port = 3000;
@@ -46,11 +48,35 @@ app.get("/list", function(req, res){
     }
 });
 app.get("/news", function(req, res){
+    let newsTitle = [];
+    let newsContent = [];
+
+    const getHtml = async() => {
+        try{
+            const html = await axios.get("https://land.naver.com/news/headline.naver")
+            .then(async (data) => {
+                const $ = cheerio.load(data.data);
+                
+                $(".headline_list dl dt:nth-child(2) a").each((index, elem) => {
+                    newsTitle.push($(elem).text());
+                });
+                $(".headline_list dl dd").each((index, elem) => {
+                    newsContent.push($(elem).text());
+                });
+                console.log(newsTitle);
+                console.log(newsContent);
+            })
+        }catch(e){
+            console.error(e);
+        }
+    }
+
+    getHtml();
     if(req.session.name){
         let name = req.session.name;
-        res.render("news", {user_name: name})
+        res.render("news", {user_name: name, title: newsTitle, content: newsContent})
     }else{
-        res.render("news", {user_name: null});
+        res.render("news", {user_name: null, title: newsTitle, content: newsContent});
     }
 });
 app.get("/notice", function(req, res){
