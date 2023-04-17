@@ -5,8 +5,6 @@ export const fetchAPTInfo = async (regcode, date, pageNo) => {
 		"http://openapi.molit.go.kr/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTradeDev";
 
 	const targetAptUrl = `${aptUrl}?serviceKey=${dataGoKrKey}&LAWD_CD=${regcode}&pageNo=${pageNo}&numOfRows=5`;
-	
-	alert(targetAptUrl);
 
 	const response = await fetch(targetAptUrl);
 	const data = await response.text();

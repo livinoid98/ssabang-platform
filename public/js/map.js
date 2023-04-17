@@ -9,7 +9,17 @@ const yearSelect = document.querySelector(".year");
 const monthSelect = document.querySelector(".month");
 const mapLeft = document.querySelector(".map-left");
 const container = document.querySelector(".main-right");
-const pagination = document.querySelector(".map-left-pagination");
+const submit = document.querySelector(".find");
+const form = document.querySelector("form[action='/area']");
+
+submit.addEventListener('click' , (e) => {
+	e.preventDefault();
+	if(dongSelect.value === "동"){
+		alert("시,군,동을 모두 입력해주세요.");
+	}else{
+		form.submit();
+	}
+});
 
 const position = new kakao.maps.LatLng(37.50130771347553, 127.03961598444006 );
 const options = {
@@ -106,7 +116,7 @@ const updateGugun = async () => {
 		for (let i = 1; i < gugun.length; i++) {
 			let name = gugun[i].name.split(" ");
 			name.splice(0, 1);
-			gugunInnerHTML += `<option value=${gugun[i].code}>${name.join(
+			gugunInnerHTML += `<option value=${gugun[i].code} name="gu">${name.join(
 				" "
 			)}</option>`;
 		}
@@ -131,7 +141,7 @@ const updateDong = async () => {
 		for (let i = 1; i < dong.length; i++) {
 			let name = dong[i].name.split(" ");
 			name.splice(0, 2);
-			dongInnerHTML += `<option value=${dong[i].code}>${name.join(
+			dongInnerHTML += `<option value=${dong[i].code} name="dong">${name.join(
 				" "
 			)}</option>`;
 		}
@@ -222,11 +232,10 @@ window.onload = async () => {
 	//   console.log(sido);
 
 	sido.forEach((item) => {
-		sidoInnerHTML += `<option value=${item.code}>${item.name}</option>`;
+		sidoInnerHTML += `<option value=${item.code} name="si">${item.name}</option>`;
 	});
 
 	sidoSelect.innerHTML = sidoInnerHTML;
 
 	setYearSelectOptions(yearSelect);
 };
-

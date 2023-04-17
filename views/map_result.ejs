@@ -7,8 +7,7 @@
 		<title>싸방 - 놀러와요, 싸피의 방</title>
 		<link rel="stylesheet" href="/styles/reset.css" type="text/css" />
 		<link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-		<link rel="stylesheet" href="/styles/banner.css" type="text/css" />
-		<link rel="stylesheet" href="/styles/signup.css" type="text/css" />
+		<link rel="stylesheet" href="/styles/map.css" type="text/css" />
 	</head>
 	<body>
 		<header>
@@ -67,109 +66,75 @@
 					</li>
 				</ul>
 				<ul class="nav-right">
-					<li class="login">
-						<h2><a href="/login">로그인</a></h2>
-					</li>
-					<li style="display: none" class="logout">
-						<h2><a href="#">로그아웃</a></h2>
-					</li>
-					<li class="signup">
-						<h2><a href="/signup">회원가입</a></h2>
-					</li>
-					<li style="display: none" class="mypage">
-						<h2><a href="/mypage">회원정보</a></h2>
-					</li>
+					<% if(user_name == null) { %>
+						<li class="login">
+							<h2><a href="/login">로그인</a></h2>
+						</li>
+						<li class="signup">
+							<h2><a href="/signup">회원가입</a></h2>
+						</li>
+						<% }else{ %>
+						<li>
+							<h2><a href="#"><%= user_name %>님 안녕하세요</a></h2>
+						</li>
+						<li class="logout">
+							<h2><a href="/logout">로그아웃</a></h2>
+						</li>
+					<% } %>
 				</ul>
 			</nav>
 		</header>
-		<div class="main-banner">
-			<div class="opacity-layer"></div>
-			<div class="main-title">
-				<h3>회원가입</h3>
-				<p>새로운 집을 만나는 첫 시작</p>
-			</div>
+		<div class="map-title">
+			<form action="/apart" method="POST">
+				<input type="text" name="apartName" placeholder="아파트 이름" />
+				<input type="submit" value="검색"/>
+			</form>
+			<form action="/area" method="GET">
+				<div class="separator">
+					<select class="sido">
+						<option>광역시</option>
+					</select>
+					<select class="gugun">
+						<option>구/군</option>
+					</select>
+					<select class="dong" name="dong">
+						<option>동</option>
+					</select>
+
+					<select class="year" style="display:none;">
+						<option>연도</option>
+					</select>
+					<select class="month" style="display:none;">
+						<option>월</option>
+					</select>
+
+					<input type="submit" class="find" value="검색">
+				</div>
+			</form>
 		</div>
-		<div class="login_title">
-			<h3>JOIN US</h3>
-			<p>회원가입을 환영합니다.</p>
-		</div>
-		<div class="sign_up">
-			<div class="sign_up_title">
-				<h4>기본 정보</h4>
-				<p>회원가입을 위한 필수입력 항목</p>
+		<div class="main">
+			<div class="map-left">
+				<ul>
+					<% for(let i=0; i<6; i++){ %>
+						<% if(list[i].apartmentName){ %>
+						<li>
+                            <div class="flex-wrap">
+                                <div class="img-wrap">
+                                    <img src="/img/apart_result.jpg" alt=""/>
+                                </div>
+                                <div class="text-wrap">
+                                    <span><%= list[i].buildYear %></span>
+                                    <h4><%= list[i].apartmentName %></h4>
+							        <span><%= list[i].dong %></span>
+                                    <p><%= list[i].roadName %></p>
+                                </div>
+                            </div>
+						</li>
+						<% } %>
+					<% } %>
+				</ul>
 			</div>
-			<div class="sign_up_content">
-				<form action="/signup" method="post">
-					<table>
-						<tr>
-							<td>아이디</td>
-							<td><input type="text" name="id" required /></td>
-						</tr>
-						<tr>
-							<td>비밀번호</td>
-							<td><input type="password" name="password" required /></td>
-						</tr>
-						<tr>
-							<td>비밀번호 확인</td>
-							<td><input type="password" name="passwordCheck" required/></td>
-						</tr>
-						<tr>
-							<td>이름</td>
-							<td><input type="text" name="name" required/></td>
-						</tr>
-						<tr>
-							<td>휴대전화</td>
-							<td><input type="tel" name="phone" required/></td>
-						</tr>
-						<tr>
-							<td>이메일</td>
-							<td><input type="email" name="email" required/></td>
-						</tr>
-					</table>
-					<h4>개인정보 수집 및 이용 동의</h4>
-					<textarea readOnly value="">■ 개인정보 수집항목
-이름 , 생년월일 , 성별 , 로그인ID , 비밀번호 , 비밀번호 질문과 답변 , 자택 전화번호 , 자택 주소 , 휴대전화번호 , 이메일 , 기념일 , 사는지역
-■ 개인정보의 수집 및 이용목적
-회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다..
-ο 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산
-구매 및 요금 결제 , 물품배송 또는 청구지 등 발송
-ο 회원 관리
-불만처리 등 민원처리
-ο 마케팅 및 광고에 활용
-신규 서비스(제품) 개발 및 특화 , 인구통계학적 특성에 따른 서비스 제공 및 광고 게재
-■ 개인정보 제공
-회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.
-- 이용자들이 사전에 동의한 경우
-- 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우
-■ 수집한 개인정보의 위탁
-싸방은 서비스 향상을 위해 관계법령에 따라 회원의 동의를 얻거나 관련 사항을 공개 또는 고지 후 회원의 개인정보를 외부에 위탁하여 처리하고 있습니다.
-싸방 의 개인정보처리 수탁자와 그 업무의 내용은 다음과 같습니다.
-						
-- 수탁자 : (주)삼성
-- 위탁 업무 내용 : 카카오 알림톡 발송 업무
-- 수집항목 : 휴대폰버호, 주문정보, 배송정보
-- 보유기간 : 회원 탈퇴 시 혹은 법정 보유기간
-- 수탁자 : (주)셀메이트
-- 위탁 업무 내용 : 배송 및 C/S처리 목적을 가지고, 셀메이트 프로그램에 일시적으로 제공
-- 수집항목 : 회원정보, 주문정보, 배송정보, C/S상담내역
-- 보유기간 : 회원 탈퇴 시 혹은 법정 보유기간
-						
-직송 등 일부 배송형태에 따라, 전자상거래소비자보호법 제 21조에 의거 협력사에 배송정보가 제공 됩니다.
-■ 개인정보의 보유 및 이용기간
-원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 관계법령의 규정에 의하여 보존할 필요가 있는 경우 회사는 아래와 같이 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다.
-보존 항목 : 이름 , 성별 , 로그인ID , 비밀번호 , 비밀번호 질문과 답변 , 자택 전화번호 , 자택 주소 , 휴대전화번호 , 이메일
-보존 근거 : 신용정보의 이용 및 보호에 관한 법률
-보존 기간 : 재구매시정보이용</textarea>
-					<div class="check">
-						<span>개인정보 수집 및 이용에 동의하십니까?</span>
-						<input type="checkbox" name="agree" />동의함
-					</div>
-					<div class="submit">
-						<Link href="/"><a><button>취소</button></a></Link>
-						<input type="submit" value="회원가입" />
-					</div>
-				</form>
-			</div>
+			<div class="main-right"></div>
 		</div>
 		<footer>
 			<div class="footer-wrap">
@@ -192,7 +157,7 @@
 				</ul>
 				<div class="call">
 					<div class="call-icon-wrap">
-						<img src="/img/call-icon.png" alt="" />
+						<img src="./img/call-icon.png" alt="" />
 					</div>
 					<span class="phone-num">3429-5100</span>
 					<p>
@@ -217,6 +182,11 @@
 				</div>
 			</div>
 		</footer>
-		<script src="/js/signup.js" type="text/javascript" text="javascript"></script>
+
+		<script
+			type="text/javascript"
+			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=91564dcc7be5a55c0f024011f4c5ec83&libraries=services,clusterer,drawing"
+		></script>
+		<script src="/js/map.js" type="module"></script>
 	</body>
 </html>

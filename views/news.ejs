@@ -84,59 +84,49 @@
 				</ul>
 			</nav>
 		</header>
-		<div class="main-banner">
-			<div class="opacity-layer"></div>
-			<div class="main-title">
-				<h3>뉴스/소개</h3>
-				<p>나에게 필요한 부동산 정보</p>
+		
+			<div class="main-banner">
+				<div class="opacity-layer"></div>
+				<div class="main-title">
+					<h3>뉴스/소개</h3>
+					<p>나에게 필요한 부동산 정보</p>
+				</div>
 			</div>
-		</div>
-		<div class="location-graph">
-			<p>공지사항 > 뉴스/소개</p>
-		</div>
-		<div class="article-contents">
-			<h3>뉴스/소개</h3>
-			<div class="search-wrap">
-				<select name="" id="">
-					<option value="">제목</option>
-				</select>
-				<input
-					type="text"
-					placeholder="검색어를 입력하세요."
-					name="content"
-				/>
+			<div class="location-graph">
+				<p>공지사항 > 뉴스/소개</p>
 			</div>
-			<div class="news-content">
-				<ul>
-					<li>
-						<a href="#">
-							<h4>피같은 전세금 좀 돌려주세요” 임차권 등기명령 신청 역대 최다</h4>
-							<p>내달 전세 만기가 돌아오는 A씨는 몇 달 째 집주인과 연락이 닿지 않아 보증금을 받을 길이
-								요원한 상황이다. 보증금 전부가 은행 대출로, 이자까지 지불해야 하는 A씨는 만기가 되자마자 법...헤럴 
-							   드경제</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<h4></h4>
-							<p></p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<h4></h4>
-							<p></p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<h4></h4>
-							<p></p>
-						</a>
-					</li>
-					<li></li>
-					<li></li>
-				</ul>
+		<div class="bg">
+			<div class="article-contents">
+				<div class="news-content">
+					<div class="news-title">
+						<h4>
+							THE<br/>
+							ESTATE<br/>
+							NEWS
+						</h4>
+						<p>오늘의 주요 부동산<br/>
+						<b class="bold">뉴스를 한 곳에서!</b></p>
+						<p>#주택공급 #주택금융 #주택정책 #주택청약
+							#정비사업 #재개발 #공공재개발 #임대사업자
+							#주담대 #양도세 #종부세 #대출
+							#개발호재 #도시재생 #신도시 #재건축
+							#임대주택 #도시계획 #가격동향 #통계</p>
+						<button><a href="https://land.naver.com/news/headline.naver">부동산 정보 더 알아보기</a></button>
+					</div>
+					<div class="news-main">
+						<ul>
+							<% for(let i=0; i<6; i++){ %>
+							<li>
+								<a href="https://land.naver.com/news/headline.naver">
+									<h4><%= title[i] %></h4>
+									<p><%= content[i] %></p>
+									<span>+ 더 알아보기</span>
+								</a>
+							</li>
+							<% } %>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 		<footer>

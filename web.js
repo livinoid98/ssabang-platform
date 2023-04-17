@@ -63,21 +63,21 @@ app.get("/news", function(req, res){
                 $(".headline_list dl dd").each((index, elem) => {
                     newsContent.push($(elem).text());
                 });
-                console.log(newsTitle);
-                console.log(newsContent);
             })
         }catch(e){
             console.error(e);
         }
     }
 
-    getHtml();
-    if(req.session.name){
-        let name = req.session.name;
-        res.render("news", {user_name: name, title: newsTitle, content: newsContent})
-    }else{
-        res.render("news", {user_name: null, title: newsTitle, content: newsContent});
-    }
+    getHtml().then(() => {
+        if(req.session.name){
+            let name = req.session.name;
+            res.render("news", {user_name: name, title: newsTitle, content: newsContent})
+        }else{
+            res.render("news", {user_name: null, title: newsTitle, content: newsContent});
+        }
+    });
+    
 });
 app.get("/notice", function(req, res){
     let sql = "select * from board";
@@ -179,6 +179,37 @@ app.get("/delete/:article", function(req, res){
     conn.query(sql, (err, result) => {
         if(err) console.log('query is not excuted. select fail...\n' + err);
         else res.redirect("/notice");
+    });
+});
+app.post("/apart", (req,res) => {
+    let apartName = req.body.apartName;
+    let sql = `select * from houseinfo where apartmentName like '%${apartName}%'`;
+    conn.query(sql, (err, rows, fields) => {
+        if(err) console.log('query is not excuted. select fail...\n' + err);
+        else{
+            if(req.session.name){
+                let name = req.session.name;
+                res.render("map_result", {user_name: name, list: rows})
+            }else{
+                res.render("map_result", {user_name: null, list: rows});
+            }
+        }
+    });
+});
+app.get("/area", (req,res) => {
+    let dong = req.query.dong;
+
+    let sql = `select * from houseinfo where dongCode = '${dong}'`;
+    conn.query(sql, (err, rows, fields) => {
+        if(err) console.log('query is not excuted. select fail...\n' + err);
+        else{
+            if(req.session.name){
+                let name = req.session.name;
+                res.render("map_result", {user_name: name, list: rows})
+            }else{
+                res.render("map_result", {user_name: null, list: rows});
+            }
+        }
     });
 });
 

@@ -85,34 +85,38 @@
 			</nav>
 		</header>
 		<div class="map-title">
-			<form action="#">
-				<input type="text" placeholder="동" />
-				<input type="submit" />
+			<form action="/apart" method="POST">
+				<input type="text" name="apartName" placeholder="아파트 이름" />
+				<input type="submit" value="검색"/>
 			</form>
-			<div class="separator">
-				<select name="city" class="sido">
-					<option>광역시</option>
-				</select>
-				<select name="city" class="gugun">
-					<option>구/군</option>
-				</select>
-				<select name="city" class="dong">
-					<option>동</option>
-				</select>
+			<form action="/area" method="GET">
+				<div class="separator">
+					<select class="sido">
+						<option>광역시</option>
+					</select>
+					<select class="gugun">
+						<option>구/군</option>
+					</select>
+					<select class="dong" name="dong">
+						<option>동</option>
+					</select>
 
-				<select name="city" class="year">
-					<option>연도</option>
-				</select>
-				<select name="city" class="month">
-					<option>월</option>
-				</select>
+					<select class="year" style="display:none;">
+						<option>연도</option>
+					</select>
+					<select class="month" style="display:none;">
+						<option>월</option>
+					</select>
 
-				<button class="find-contents">검색</button>
-			</div>
+					<input type="submit" class="find" value="검색">
+				</div>
+			</form>
 		</div>
 		<div class="main">
 			<div class="map-left">
-				<div class="map-left-pagination"></div>
+				<ul>
+
+				</ul>
 			</div>
 			<div class="main-right"></div>
 		</div>

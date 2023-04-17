@@ -35,59 +35,113 @@
     border-bottom:1px solid #E7E7E7;
     p{
         @include block-center(1200px);
-        @include font(15px, 300, #CECECE);
+        @include font(15px, 300
+        
+        , #CECECE);
     }
 }
 
-.article-contents{
-    @include block-center(1200px);
-    h3{
-        @include font(30px, 700, #161410);
-        text-align:center;
-        padding-top:112px;
-    }
-    .search-wrap{
-        @include flex(flex, flex-end);
-        margin-right:100px;
-        margin-top:56px;
-        select{
-            @include setSize(80px, 40px);
-            border:2px solid #E7E7E7;
-            @include font(13px, 400, #DBDBDB);
-            margin-right:20px;
+.bg{
+    width:100%;
+    background-color:#F3F2EE;
+    padding-top:100px;
+    .article-contents{
+        @include block-center(1200px);
+        h3{
+            @include font(30px, 700, #161410);
+            text-align:center;
+            padding-top:112px;
         }
-        option{
-            @include setSize(300px, 40px);
-            border:2px solid #E7E7E7;
-            @include font(13px, 400, #DBDBDB);
+        .search-wrap{
+            @include flex(flex, flex-end);
+            margin-right:100px;
+            margin-top:56px;
+            select{
+                @include setSize(80px, 40px);
+                border:2px solid #E7E7E7;
+                @include font(13px, 400, #DBDBDB);
+                margin-right:20px;
+            }
+            option{
+                @include setSize(300px, 40px);
+                border:2px solid #E7E7E7;
+                @include font(13px, 400, #DBDBDB);
+            }
+            input{
+                border:2px solid #E7E7E7;
+                box-sizing: border-box;
+                padding:10px;
+            }
         }
-        input{
-            border:2px solid #E7E7E7;
-            box-sizing: border-box;
-            padding:10px;
-        }
-    }
-
-    .news-content{
-        width:1200px;
-        margin-bottom:120px;
-        ul{
+    
+        .news-content{
+            width:1200px;
+            padding-bottom:120px;
             @include flex(flex);
-            flex-wrap:wrap;
-            li{
-                @include setSize(370px, 380px);
-                margin-left:30px;
-                border:2px solid #ededed;
-                border-radius:10px;
-                margin-top:20px;
-                &:nth-child(3n+1){
-                    margin-left:0px;
-                }
+            .news-title{
+                width:400px;
+                box-sizing: border-box;
+                display:flex;
+                flex-direction: column;
+                justify-content:center;
                 h4{
-
+                    @include font(72px, 400, #326CF9);
                 }
                 p{
-
+                    &:nth-child(2){
+                        @include font(32px, 400, #353535);
+                        line-height:40px;
+                        margin-top:18px;
+                        .bold{
+                            font-weight:700;
+                        }
+                    }
+                    &:nth-child(3){
+                        @include font(14px, 400, #CFCFCF);
+                        padding-right:60px;
+                        margin-top:14px;
+                        line-height:16px;
+                    }
+                }
+                button{
+                    @include setSize(220px, 50px);
+                    background-color:#326CF9;
+                    border:none;
+                    @include font(16px, 700, #FFFFFF);
+                    margin-top:22px;
+                }
+            }
+            .news-main{
+                width:800px;
+                ul{
+                    @include flex(flex);
+                    flex-wrap:wrap;
+                    li{
+                        @include setSize(350px, 300px);
+                        background-color:#FFF;
+                        margin-top:20px;
+                        @include flex(flex, center);
+                        flex-direction: column;
+                        box-sizing: border-box;
+                        padding:50px;
+                        &:nth-child(2n){
+                            margin-left:20px;
+                        }
+                        h4{
+                            @include font(20px, 700, #3A3A3A);
+                            line-height:28px;
+                        }
+                        p{
+                            @include font(12px, 400, #9E9E9E);
+                            line-height:18px;
+                            margin-top:10px;
+                        }
+                        span{
+                            display:block;
+                            @include font(12px, 400, #BBBBBB);
+                            margin-top:14px;
+                        }
+                    }
                 }
             }
         }
